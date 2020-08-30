@@ -7,9 +7,9 @@
     tools:context=".app.feature.userinfo.view.UserInfoActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imgUser"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:layout_marginTop="16dp"
         android:textSize="24sp"
         tools:text="PedroRTeles"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imgUser"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         tools:text="Pedro Teles"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imgUser"
         app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
 
     <TextView
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         tools:text="https://github.com/PedroRTeles"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imgUser"
         app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
     <TextView
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         tools:text="Brazil"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imgUser"
         app:layout_constraintTop_toBottomOf="@+id/txtUrl" />
 
     <TextView
@@ -60,6 +60,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         tools:text="25935358"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imgUser"
         app:layout_constraintTop_toBottomOf="@+id/txtLocation" />
 </androidx.constraintlayout.widget.ConstraintLayout>
