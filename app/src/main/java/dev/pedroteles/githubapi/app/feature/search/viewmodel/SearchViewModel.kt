@@ -1,6 +1,5 @@
-package dev.pedroteles.githubapi.app.search.viewmodel
+package dev.pedroteles.githubapi.app.feature.search.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import dev.pedroteles.githubapi.app.base.BaseViewModel

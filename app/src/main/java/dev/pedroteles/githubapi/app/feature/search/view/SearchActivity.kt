@@ -1,11 +1,11 @@
-package dev.pedroteles.githubapi.app.search.view
+package dev.pedroteles.githubapi.app.feature.search.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import dev.pedroteles.githubapi.R
-import dev.pedroteles.githubapi.app.search.viewmodel.SearchViewModel
+import dev.pedroteles.githubapi.app.feature.search.viewmodel.SearchViewModel
 import kotlinx.android.synthetic.main.activity_search.*
 import org.koin.android.ext.android.inject
 

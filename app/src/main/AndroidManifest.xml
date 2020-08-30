@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".MainApplication">
-        <activity android:name=".app.search.view.SearchActivity">
+        <activity android:name="dev.pedroteles.githubapi.app.feature.search.view.SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
