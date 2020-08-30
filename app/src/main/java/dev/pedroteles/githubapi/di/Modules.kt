@@ -2,6 +2,7 @@ package dev.pedroteles.githubapi.di
 
 import dev.pedroteles.githubapi.BuildConfig
 import dev.pedroteles.githubapi.app.feature.search.viewmodel.SearchViewModel
+import dev.pedroteles.githubapi.app.feature.userinfo.viewmodel.UserInfoViewModel
 import dev.pedroteles.githubapi.domain.core.usecase.SearchUserUseCase
 import dev.pedroteles.githubapi.data.dataprovider.SearchUserDataProvider
 import dev.pedroteles.githubapi.data.implementation.RetrofitUserRepositoryImpl
@@ -14,7 +15,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 val applicationModules = module(override = true) {
     factory { SearchViewModel() }
-    factory<SearchUserUseCaseGateway> { SearchUserUseCase() }
+    factory { UserInfoViewModel() }
+}
+
+val dataModules = module(override = true) {
     factory<SearchUserDataProviderGateway> { SearchUserDataProvider() }
     single<UserRepository> { RetrofitUserRepositoryImpl() }
     single<Retrofit> {
@@ -23,4 +27,8 @@ val applicationModules = module(override = true) {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+}
+
+val domainModules = module(override = true) {
+    factory<SearchUserUseCaseGateway> { SearchUserUseCase() }
 }
