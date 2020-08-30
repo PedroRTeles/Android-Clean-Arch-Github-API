@@ -2,7 +2,7 @@ package dev.pedroteles.githubapi.di
 
 import dev.pedroteles.githubapi.BuildConfig
 import dev.pedroteles.githubapi.app.feature.search.viewmodel.SearchViewModel
-import dev.pedroteles.githubapi.core.usecase.SearchUserUseCase
+import dev.pedroteles.githubapi.domain.core.usecase.SearchUserUseCase
 import dev.pedroteles.githubapi.data.dataprovider.SearchUserDataProvider
 import dev.pedroteles.githubapi.data.implementation.RetrofitUserRepositoryImpl
 import dev.pedroteles.githubapi.data.repository.UserRepository

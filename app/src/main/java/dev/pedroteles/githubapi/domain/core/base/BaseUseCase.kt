@@ -1,4 +1,4 @@
-package dev.pedroteles.githubapi.core.base
+package dev.pedroteles.githubapi.domain.core.base
 
 import org.koin.standalone.KoinComponent
 
