@@ -3,8 +3,8 @@ package dev.pedroteles.githubapi.data.dataprovider
 import dev.pedroteles.githubapi.data.BaseDataProvider
 import dev.pedroteles.githubapi.data.dataprovider.mapper.SearchUserDataProviderMapper
 import dev.pedroteles.githubapi.data.repository.UserRepository
-import dev.pedroteles.githubapi.domain.entity.GitHubUserCore
-import dev.pedroteles.githubapi.domain.gateway.dataprovider.SearchUserDataProviderGateway
+import dev.pedroteles.githubapi.core.entity.GitHubUserCore
+import dev.pedroteles.githubapi.core.gateway.dataprovider.SearchUserDataProviderGateway
 
 class SearchUserDataProvider(private val repository: UserRepository) : BaseDataProvider(), SearchUserDataProviderGateway {
 

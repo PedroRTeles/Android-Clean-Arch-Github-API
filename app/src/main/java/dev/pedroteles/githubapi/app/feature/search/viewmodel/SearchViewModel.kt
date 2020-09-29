@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import dev.pedroteles.githubapi.app.base.BaseViewModel
 import dev.pedroteles.githubapi.app.entity.GitHubUserDTO
 import dev.pedroteles.githubapi.app.mapper.SearchViewModelMapper
-import dev.pedroteles.githubapi.domain.gateway.usecase.SearchUserUseCaseGateway
+import dev.pedroteles.githubapi.core.gateway.usecase.SearchUserUseCaseGateway
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -1,7 +1,7 @@
 package dev.pedroteles.githubapi.data.dataprovider
 
 import dev.pedroteles.githubapi.data.repository.UserRepository
-import dev.pedroteles.githubapi.domain.gateway.dataprovider.SearchUserDataProviderGateway
+import dev.pedroteles.githubapi.core.gateway.dataprovider.SearchUserDataProviderGateway
 import dev.pedroteles.githubapi.factory.UserFactory
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertFalse

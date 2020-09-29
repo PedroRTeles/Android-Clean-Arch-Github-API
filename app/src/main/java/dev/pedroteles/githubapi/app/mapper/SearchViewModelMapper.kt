@@ -1,7 +1,7 @@
 package dev.pedroteles.githubapi.app.mapper
 
 import dev.pedroteles.githubapi.app.entity.GitHubUserDTO
-import dev.pedroteles.githubapi.domain.entity.GitHubUserCore
+import dev.pedroteles.githubapi.core.entity.GitHubUserCore
 
 class SearchViewModelMapper {
     companion object {

@@ -3,7 +3,7 @@ package dev.pedroteles.githubapi
 import android.app.Application
 import dev.pedroteles.githubapi.di.applicationModules
 import dev.pedroteles.githubapi.di.dataModules
-import dev.pedroteles.githubapi.di.domainModules
+import dev.pedroteles.githubapi.di.coreModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -14,7 +14,7 @@ class MainApplication : Application() {
 
         startKoin {
             androidContext(this@MainApplication)
-            modules(applicationModules, dataModules, domainModules)
+            modules(applicationModules, dataModules, coreModules)
         }
     }
 }

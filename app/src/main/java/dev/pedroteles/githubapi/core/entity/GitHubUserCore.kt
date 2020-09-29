@@ -1,4 +1,4 @@
-package dev.pedroteles.githubapi.domain.entity
+package dev.pedroteles.githubapi.core.entity
 
 data class GitHubUserCore(
     val userFound: Boolean = false,

@@ -1,7 +1,7 @@
 package dev.pedroteles.githubapi.data.dataprovider.mapper
 
 import dev.pedroteles.githubapi.data.entity.GitHubUserEntity
-import dev.pedroteles.githubapi.domain.entity.GitHubUserCore
+import dev.pedroteles.githubapi.core.entity.GitHubUserCore
 
 class SearchUserDataProviderMapper {
     companion object {
