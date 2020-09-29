@@ -1,6 +1,6 @@
 package dev.pedroteles.githubapi.domain.core.base
 
-import org.koin.standalone.KoinComponent
+import org.koin.core.KoinComponent
 
 open class BaseUseCase : KoinComponent {
 }

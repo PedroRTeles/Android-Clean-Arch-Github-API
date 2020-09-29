@@ -9,7 +9,7 @@ import dev.pedroteles.githubapi.domain.gateway.usecase.SearchUserUseCaseGateway
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.koin.standalone.inject
+import org.koin.core.inject
 
 class SearchViewModel : BaseViewModel() {
     private val useCase: SearchUserUseCaseGateway by inject()

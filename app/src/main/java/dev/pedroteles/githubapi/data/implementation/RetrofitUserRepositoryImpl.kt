@@ -4,8 +4,8 @@ import dev.pedroteles.githubapi.data.entity.GitHubUserEntity
 import dev.pedroteles.githubapi.data.repository.UserRepository
 import dev.pedroteles.githubapi.data.service.UserService
 import kotlinx.coroutines.coroutineScope
-import org.koin.standalone.KoinComponent
-import org.koin.standalone.inject
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 import retrofit2.HttpException
 import retrofit2.Retrofit
 import retrofit2.await

@@ -5,10 +5,8 @@ import dev.pedroteles.githubapi.data.dataprovider.mapper.SearchUserDataProviderM
 import dev.pedroteles.githubapi.data.repository.UserRepository
 import dev.pedroteles.githubapi.domain.entity.GitHubUserCore
 import dev.pedroteles.githubapi.domain.gateway.dataprovider.SearchUserDataProviderGateway
-import org.koin.standalone.inject
 
-class SearchUserDataProvider : BaseDataProvider(), SearchUserDataProviderGateway {
-    private val repository: UserRepository by inject()
+class SearchUserDataProvider(private val repository: UserRepository) : BaseDataProvider(), SearchUserDataProviderGateway {
 
     override suspend fun searchUser(username: String): GitHubUserCore {
         val entity = repository.searchUser(username)

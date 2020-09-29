@@ -6,7 +6,7 @@ buildscript {
         gson_version = '2.8.6'
         lifecycle_version = '2.2.0'
         coroutines_version = '1.2.1'
-        koin_version = '1.0.2'
+        koin_version = '2.1.6'
         picasso_version = '2.71828'
     }
     repositories {

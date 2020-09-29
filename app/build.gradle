@@ -51,14 +51,19 @@ dependencies {
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
 
     //Koin
     implementation "org.koin:koin-android:$koin_version"
+    testImplementation "org.koin:koin-test:$koin_version"
 
     //Picasso
     implementation "com.squareup.picasso:picasso:$picasso_version"
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     testImplementation 'junit:junit:4.12'
+    testImplementation "org.mockito:mockito-core:2.23.0"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0"
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
