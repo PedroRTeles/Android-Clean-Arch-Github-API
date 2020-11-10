@@ -1,11 +1,11 @@
 package dev.pedroteles.githubapi.data.dataprovider
 
 import dev.pedroteles.githubapi.data.repository.UserRepository
-import dev.pedroteles.githubapi.core.gateway.dataprovider.SearchUserDataProviderGateway
+import dev.pedroteles.githubapi.domain.exception.GitHubUserNotFoundException
+import dev.pedroteles.githubapi.domain.gateway.dataprovider.SearchUserDataProviderGateway
 import dev.pedroteles.githubapi.factory.UserFactory
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
+import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -28,17 +28,19 @@ class SearchUserDataProviderTest {
     }
 
     @Test
-    fun whenDoesNotFoundUserShouldReturnNotFoundCore() = runBlocking {
+    fun whenDoesNotFoundUserShouldThrowException() = runBlocking {
         //given
         val username = "Test"
 
         Mockito.`when`(repository.searchUser(anyString())).thenReturn(null)
 
-        //when
-        val userCore = dataProvider.searchUser(username)
-
         //then
-        assertFalse(userCore.userFound)
+        try {
+            dataProvider.searchUser(username)
+            fail()
+        } catch (e: GitHubUserNotFoundException) {
+            //NOT IMPLEMENTED
+        }
     }
 
     @Test
@@ -51,6 +53,7 @@ class SearchUserDataProviderTest {
         val userCore = dataProvider.searchUser(username)
 
         //then
-        assertTrue(userCore.userFound)
+        assertEquals(1, userCore.id)
+        assertEquals("Test", userCore.name)
     }
 }

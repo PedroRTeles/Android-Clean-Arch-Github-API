@@ -3,12 +3,12 @@ package dev.pedroteles.githubapi.di
 import dev.pedroteles.githubapi.BuildConfig
 import dev.pedroteles.githubapi.app.feature.search.viewmodel.SearchViewModel
 import dev.pedroteles.githubapi.app.feature.userinfo.viewmodel.UserInfoViewModel
-import dev.pedroteles.githubapi.core.usecase.SearchUserUseCase
+import dev.pedroteles.githubapi.domain.usecase.SearchUserUseCase
 import dev.pedroteles.githubapi.data.dataprovider.SearchUserDataProvider
 import dev.pedroteles.githubapi.data.implementation.RetrofitUserRepositoryImpl
 import dev.pedroteles.githubapi.data.repository.UserRepository
-import dev.pedroteles.githubapi.core.gateway.dataprovider.SearchUserDataProviderGateway
-import dev.pedroteles.githubapi.core.gateway.usecase.SearchUserUseCaseGateway
+import dev.pedroteles.githubapi.domain.gateway.dataprovider.SearchUserDataProviderGateway
+import dev.pedroteles.githubapi.domain.gateway.usecase.SearchUserUseCaseGateway
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

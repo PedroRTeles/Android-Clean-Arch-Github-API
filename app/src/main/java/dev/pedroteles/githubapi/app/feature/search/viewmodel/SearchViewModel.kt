@@ -5,7 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import dev.pedroteles.githubapi.app.base.BaseViewModel
 import dev.pedroteles.githubapi.app.entity.GitHubUserDTO
 import dev.pedroteles.githubapi.app.mapper.SearchViewModelMapper
-import dev.pedroteles.githubapi.core.gateway.usecase.SearchUserUseCaseGateway
+import dev.pedroteles.githubapi.domain.exception.GitHubUserNotFoundException
+import dev.pedroteles.githubapi.domain.gateway.usecase.SearchUserUseCaseGateway
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,12 +25,12 @@ class SearchViewModel : BaseViewModel() {
 
     fun searchUser(username: String) {
         CoroutineScope(Dispatchers.Main).launch {
-            val userCore = useCase.searchUser(username)
-
-            if(userCore.userFound)
+            try {
+                val userCore = useCase.searchUser(username)
                 githubUserMutable.value = SearchViewModelMapper.coreToDTO(userCore)
-            else
+            } catch (e: GitHubUserNotFoundException) {
                 messageMutable.value = SearchViewModelMapper.userNotFound()
+            }
         }
     }
 }

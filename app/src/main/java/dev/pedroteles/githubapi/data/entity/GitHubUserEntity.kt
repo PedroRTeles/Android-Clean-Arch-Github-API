@@ -1,22 +1,23 @@
 package dev.pedroteles.githubapi.data.entity
 
 import com.google.gson.annotations.SerializedName
+import dev.pedroteles.githubapi.domain.entity.GitHubUser
 
 data class GitHubUserEntity(
     @SerializedName("id")
-    val id: Long,
+    override val id: Long,
     @SerializedName("login")
-    val login: String,
+    override val login: String,
     @SerializedName("name")
-    val name: String,
+    override val name: String,
     @SerializedName("avatar_url")
-    val avatarUrl: String,
+    override val avatarUrl: String?,
     @SerializedName("html_url")
-    val url: String,
+    override val url: String,
     @SerializedName("blog")
-    val blog: String,
+    override val blog: String?,
     @SerializedName("location")
-    val location: String,
+    override val location: String?,
     @SerializedName("bio")
-    val bio: String
-)
+    override val bio: String?
+) : GitHubUser

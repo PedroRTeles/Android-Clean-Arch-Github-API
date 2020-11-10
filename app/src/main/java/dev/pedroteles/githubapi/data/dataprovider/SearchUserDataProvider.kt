@@ -1,19 +1,19 @@
 package dev.pedroteles.githubapi.data.dataprovider
 
 import dev.pedroteles.githubapi.data.BaseDataProvider
-import dev.pedroteles.githubapi.data.dataprovider.mapper.SearchUserDataProviderMapper
 import dev.pedroteles.githubapi.data.repository.UserRepository
-import dev.pedroteles.githubapi.core.entity.GitHubUserCore
-import dev.pedroteles.githubapi.core.gateway.dataprovider.SearchUserDataProviderGateway
+import dev.pedroteles.githubapi.domain.entity.GitHubUser
+import dev.pedroteles.githubapi.domain.exception.GitHubUserNotFoundException
+import dev.pedroteles.githubapi.domain.gateway.dataprovider.SearchUserDataProviderGateway
 
 class SearchUserDataProvider(private val repository: UserRepository) : BaseDataProvider(), SearchUserDataProviderGateway {
 
-    override suspend fun searchUser(username: String): GitHubUserCore {
+    override suspend fun searchUser(username: String): GitHubUser {
         val entity = repository.searchUser(username)
 
         if(entity != null)
-            return SearchUserDataProviderMapper.entityToCore(entity)
+            return entity
 
-        return SearchUserDataProviderMapper.userNotFound()
+        throw GitHubUserNotFoundException()
     }
 }
