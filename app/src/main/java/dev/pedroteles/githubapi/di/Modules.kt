@@ -30,5 +30,5 @@ val dataModules = module(override = true) {
 }
 
 val coreModules = module(override = true) {
-    factory<SearchUserUseCaseGateway> { SearchUserUseCase() }
+    factory<SearchUserUseCaseGateway> { SearchUserUseCase(get()) }
 }

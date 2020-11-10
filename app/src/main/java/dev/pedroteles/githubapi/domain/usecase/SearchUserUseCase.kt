@@ -6,8 +6,7 @@ import dev.pedroteles.githubapi.domain.gateway.dataprovider.SearchUserDataProvid
 import dev.pedroteles.githubapi.domain.gateway.usecase.SearchUserUseCaseGateway
 import org.koin.core.inject
 
-class SearchUserUseCase : BaseUseCase(), SearchUserUseCaseGateway {
-    private val dataProvider: SearchUserDataProviderGateway by inject()
+class SearchUserUseCase(private val dataProvider: SearchUserDataProviderGateway) : BaseUseCase(), SearchUserUseCaseGateway {
 
     override suspend fun searchUser(username: String): GitHubUser {
         return dataProvider.searchUser(username)
