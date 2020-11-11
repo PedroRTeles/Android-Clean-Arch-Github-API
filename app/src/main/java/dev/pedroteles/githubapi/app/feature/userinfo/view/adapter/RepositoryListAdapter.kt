@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import dev.pedroteles.githubapi.R
-import dev.pedroteles.githubapi.domain.entity.Repository
+import dev.pedroteles.githubapi.domain.entity.GitHubRepository
 import kotlinx.android.synthetic.main.repositories_list_item.view.*
 
 class RepositoryListAdapter(
-    private val repositories: List<Repository>,
+    private val gitHubRepositories: List<GitHubRepository>,
     private val context: Context) : RecyclerView.Adapter<RepositoryListAdapter.RepositoryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryViewHolder {
@@ -19,18 +19,18 @@ class RepositoryListAdapter(
     }
 
     override fun onBindViewHolder(holder: RepositoryViewHolder, position: Int) {
-        val repository = repositories[position]
+        val repository = gitHubRepositories[position]
         holder.populateView(repository)
     }
 
     override fun getItemCount(): Int {
-        return repositories.size
+        return gitHubRepositories.size
     }
 
     class RepositoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun populateView(repository: Repository) {
-            itemView.txtLanguage.text = repository.language
-            itemView.txtRepositoryName.text = repository.name
+        fun populateView(gitHubRepository: GitHubRepository) {
+            itemView.txtLanguage.text = gitHubRepository.language
+            itemView.txtRepositoryName.text = gitHubRepository.name
         }
     }
 }
